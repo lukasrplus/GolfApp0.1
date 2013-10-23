@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  firstname: MyString
+  secondname: MyString
+  HCP: 1
+  club: MyString
+  brand: MyString
+
+two:
+  firstname: MyString
+  secondname: MyString
+  HCP: 1
+  club: MyString
+  brand: MyString

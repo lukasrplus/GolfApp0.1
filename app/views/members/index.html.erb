@@ -1,0 +1,30 @@
+<style type="text/css">
+
+body {
+  font-family: Arial;
+}
+
+nav {
+  color: white;
+  background-color: black;
+}
+
+</style>
+
+
+
+<nav>
+<h1>LUKAS PRIVATE GOLF CLUB MEMBERS</h1>
+</nav>
+
+
+
+<p><% @members.each do |member| %></p>
+<% fullname = member.firstname + " " + member.secondname  %>
+<ul>
+  <li><%= link_to fullname, details_url(member.id) %></li>
+</ul>
+
+<% end %>
+
+
