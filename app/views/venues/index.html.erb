@@ -1,6 +1,6 @@
-
 <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
+
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="icon-bar"></span>
@@ -12,9 +12,9 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
 
-            <li class="active"><%= link_to "HOME", root_url %></li>
+            <li><%= link_to "HOME", root_url %></li>
 
-            <li><%= link_to "COMPETITION VENUES", courses_url %></li>
+            <li class="active"><%= link_to "COMPETITION VENUES", courses_url %></li>
 
 
 
@@ -45,44 +45,34 @@
       </div>
     </div>
 
+<div class="coursesindex">
 
-<div class="container">
-
-    <div class="jumbotron">
-      <div class="container">
-        <h1>ERIC VOZARI MEMORIAL</h1>
-        <p class="lead">Heritage. Honor. Loyalty.</p>
-        <p><a class="btn btn-danger">Learn more</a></p>
-      </div>
-    </div><!-- end of jumbotron -->
-
-    <div class="container"><!-- Spalten -->
+ <div class="container"><!-- Spalten -->
       <div class="row">
         <div class="col-lg-4 white">
-          <h2>Last years winner.</h2>
+          <h2><%= @courses.find_by_id(1).name %></h2>
+          <h4><%= @courses.find_by_id(1).region %></h4>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-danger btn-xs" href="#">Learn more &raquo;</a></p>
         </div>
         <div class="col-lg-4 white">
-          <h2>Become a member.</h2>
+          <h2><%= @courses.find_by_id(2).name %></h2>
+          <h4><%= @courses.find_by_id(2).region %></h4>
           <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
           <p><a class="btn btn-danger btn-xs" href="#">Learn more &raquo;</a></p>
        </div>
         <div class="col-lg-4 white">
-          <h2>The Cup.</h2>
+          <h2><%= @courses.find_by_id(3).name %></h2>
+          <h4><%= @courses.find_by_id(3).region %></h4>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
           <p><a class="btn btn-danger btn-xs" href="#">Learn more &raquo;</a></p>
         </div>
-      </div>
+  </div>
 
-      <hr>
-
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
-    </div> <!-- /container -->
-
-
-
+</div>
 
 </div><!-- end of container -->
+
+
+
+
