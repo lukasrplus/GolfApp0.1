@@ -1,55 +1,85 @@
 
-<!-- CSS STYLING -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ERIC VOZARI</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
 
-<style type="text/css">
-
-body {
-  font-family: Helvetica Neue;
-   }
-
-nav {
-  color: white;
-  background-color: black;
-}
-
-ul {
-  list-style: none;
-  margin: 0px;
-}
-
-li {
-  margin: 0px;
-  background-color: grey;
-
-}
-
-a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
+            <li class="active"><a href="#">HOME</a></li>
+            <li><a href="#about">HERITAGE</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEMBERS <b class="caret"></b></a>
 
 
-
-</style>
-
-<!-- END OF CSS -->
-
-<!-- HTML BEGINS -->
-
-
-<nav>
-<h1>LUKAS PRIVATE GOLF CLUB MEMBERS</h1>
-</nav>
+          <ul class="dropdown-menu">
+            <% @members.each do |member| %>
+            <% fullname = member.firstname + " " + member.secondname  %>
+              <li><%= link_to fullname, details_url(member.id) %></li>
+          <% end  %>
+          </ul>
 
 
+            </li>
+          </ul>
 
-<p><% @members.each do |member| %></p>
-<% fullname = member.firstname + " " + member.secondname  %>
-<ul>
-  <li><%= link_to fullname, details_url(member.id) %></li>
-</ul>
+          <form class="navbar-form navbar-right">
+          <!--   <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div> -->
+            <button type="submit" class="btn btn-success">Member Login</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
 
-<% end %>
+
+<div class="container">
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>ERIC VOZARI MEMORIAL</h1>
+        <p class="lead">Heritage. Honor. Loyalty.</p>
+        <p><a class="btn btn-danger">Learn more</a></p>
+      </div>
+    </div><!-- end of jumbotron -->
+
+<div class="container"><!-- Spalten -->
+      <div class="row">
+        <div class="col-lg-4 white">
+          <h2>Last years winner.</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-danger btn-xs" href="#">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-lg-4 white">
+          <h2>Become a member.</h2>
+          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <p><a class="btn btn-danger btn-xs" href="#">Learn more &raquo;</a></p>
+       </div>
+        <div class="col-lg-4 white">
+          <h2>The Cup.</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <p><a class="btn btn-danger btn-xs" href="#">Learn more &raquo;</a></p>
+        </div>
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+    </div> <!-- /container -->
 
 
+
+
+</div><!-- end of container -->

@@ -1,0 +1,15 @@
+.profiledata {
+  padding: 0px 20px 0px 20px;
+  margin: 0px 20px 0px 20px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  float: left;
+  height: 300px;
+}
+
+.profilepic {
+  float: left;
+  height: 300px;
+
+}
