@@ -1,2 +1,41 @@
-<h1>Profile</h1>
-<p><%= @player.firstname %></p>
+<style type="text/css">
+
+body {
+  font-family: Helvetica Neue;
+}
+
+nav {
+  color: white;
+  background-color: black;
+}
+
+h1 {
+  font-weight: bolder;
+  /*padding: 20px;*/
+  margin: 20px;
+}
+
+.profiledata {
+  padding: 20px;
+  margin: 20px;
+  background-color: grey;
+  color: black;
+  font-weight: bold;
+}
+
+</style>
+
+
+<nav>
+<h1>Member Profile <%= @player.firstname %> <%= @player.secondname %></h1>
+</nav>
+
+<div class="profiledata">
+
+  <p>First Name: <%= @player.firstname %></p>
+  <p>Last Name: <%= @player.secondname %></p>
+  <p>HCP: <%= @player.HCP %></p>
+  <p>Golf Club: <%= @player.club %></p>
+  <p>Brand: <%= @player.brand %></p>
+
+</div>
