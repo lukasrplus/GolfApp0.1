@@ -1,25 +1,96 @@
-<nav>
-<h1>Member Profile <%= @player.firstname %> <%= @player.secondname %></h1>
-</nav>
+<div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">ERIC VOZARI</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+            <li><%= link_to "HOME", root_url %></li>
+
+            <li><%= link_to "COMPETITION VENUES", courses_url %></li>
 
 
-<div class="profilepic">
 
-<img src="<%= asset_path (@player.image) %>">
+            <li class="dropdown">
+
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MEMBERS <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <% @members.each do |member| %>
+            <% fullname = member.firstname + " " + member.secondname  %>
+              <li><%= link_to fullname, details_url(member.id) %></li>
+            <% end  %>
+          </ul>
 
 
+            </li>
+          </ul>
+
+          <form class="navbar-form navbar-right">
+          <!--   <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div> -->
+            <button type="submit" class="btn btn-success"><i class="fa fa-heart fa-lg"></i>  Member Login</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+
+
+
+<div class="profile">
+
+<div class="container"><!-- Spalten -->
+      <div class="row">
+
+        <div class="col-lg-4 white">
+          <img src="<%= asset_path (@player.image) %>" >
+        </div>
+
+        <div class="col-lg-8 white">
+
+
+      <tbody>
+
+        <tr>
+          <td>First Name:</td>
+          <td><%= @player.firstname %></td>
+        </tr>
+
+        <tr>
+          <td>Last Name: </td>
+          <td><%= @player.secondname %></td>
+        </tr>
+
+        <tr>
+          <td>HCP:</td>
+          <td><%= @player.HCP %></td>
+        </tr>
+
+        <tr>
+          <td>Golf Club:</td>
+          <td><%= @player.club %></td>
+        </tr>
+
+         <tr>
+          <td>Brand:</td>
+          <td><%= @player.brand %></td>
+        </tr>
+
+
+      </tbody>
+
+        </div>
+
+  </div>
 </div>
-
-
-
-<div class="profiledata">
-
-  <p>First Name: <%= @player.firstname %></p>
-  <p>Last Name: <%= @player.secondname %></p>
-  <p>HCP: <%= @player.HCP %></p>
-  <p>Golf Club: <%= @player.club %></p>
-  <p>Brand: <%= @player.brand %></p>
-
-</div>
-
-
