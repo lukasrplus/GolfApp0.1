@@ -1,0 +1,67 @@
+<div class="profile">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 white" id="member_form">
+
+        <h1>Add new member</h1>
+
+        <%= form_tag members_url, method: 'post', role: 'form' do %>
+
+              <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    <%= label_tag 'firstname', 'First Name:' %>
+                    <%= text_field_tag 'firstname', nil, class: 'form-control' %>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form_group">
+                  <%= label_tag 'secondname', 'Last Name:' %>
+                  <%= text_field_tag 'secondname', nil, class: 'form-control' %>
+                  </div>
+                </div>
+
+             </div>
+
+             <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                    <%= label_tag 'HCP', 'Handicap:' %>
+                    <%= text_field_tag 'HCP', nil, class: 'form-control' %>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="form_group">
+                  <%= label_tag 'club', 'Golf Club:' %>
+                  <%= text_field_tag 'club', nil, class: 'form-control' %>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="form_group">
+                  <%= label_tag 'brand', 'Brand:' %>
+                  <%= text_field_tag 'brand', nil, class: 'form-control' %>
+                  </div>
+                </div>
+
+             </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <button type="submit" class="btn btn-success" id = "newtask">Create new member</button>
+            </div>
+          </div>
+
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+
+</div>
