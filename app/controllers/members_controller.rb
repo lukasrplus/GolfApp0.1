@@ -18,6 +18,7 @@ def create
   m.HCP = params[:HCP]
   m.club = params[:club]
   m.brand = params[:brand]
+  m.photo = params[:photo]
   m.save
   redirect_to members_url
 end
