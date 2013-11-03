@@ -13,12 +13,13 @@ end
 
 def create
   m = Member.new
+  m.photo = params[:photo]
+  # m.photo = File.open("assets/images/#{m.id}", "r")
   m.firstname = params[:firstname]
   m.secondname = params[:secondname]
   m.HCP = params[:HCP]
   m.club = params[:club]
   m.brand = params[:brand]
-  m.photo = params[:photo]
   m.save
   redirect_to members_url
 end
