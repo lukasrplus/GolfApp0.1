@@ -5,16 +5,25 @@
 
       <h1>Members</h1>
 
-      <ul class="list-group">
+      <table class="table table-bordered">
+        <tr>
+          <th>Name</th>
+          <th>HCP</th>
+          <th>Golf Club</th>
+          <th>Brand</th>
+        </tr>
 
-      <% @members.each do |member| %>
+        <% @members.each do |member| %>
         <% fullname = member.firstname + " " + member.secondname %>
-        <li class="list-group-item" id = "memberlist"><%= link_to fullname, member_url(member.id)%></li>
+        <tr>
+          <td id="member_list"><%= link_to fullname, member_url(member.id) %></td>
+          <td><%= member.HCP %></td>
+          <td><%= member.club %></td>
+          <td><%= member.brand %></td>
+        </tr>
+        <% end %>
 
-      <% end %>
-
-
-      </ul>
+      </table>
 
 
 </div>
