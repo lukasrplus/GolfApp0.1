@@ -33,9 +33,13 @@
                                   <h4>HCP: <%= @player.HCP %></h4>
                                   <h4><%= @player.club %></h4>
                                   <h4><%= @player.brand %></h4>
-
-
+                                  <!-- EDIT BUTTON -->
+                                  <%= form_tag edit_member_url(@player.id), method: 'get' do %>
+                                       <button type="submit" class="btn btn-info">Edit Member</button>
+                                   <% end %>
               </div>
+
+
           </div>
 
 

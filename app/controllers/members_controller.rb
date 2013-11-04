@@ -1,10 +1,12 @@
 class MembersController < ApplicationController
 
-  def index
+def index
+  @members = Member.all
+end
 
-    @members = Member.all
-
-  end
+def member_index
+  @members = Member.all
+end
 
 
 def new
@@ -13,8 +15,6 @@ end
 
 def create
   m = Member.new
-  m.photo = params[:photo]
-  # m.photo = File.open("assets/images/#{m.id}", "r")
   m.firstname = params[:firstname]
   m.secondname = params[:secondname]
   m.HCP = params[:HCP]
@@ -27,16 +27,43 @@ end
 
 
 
+def show
+  @members = Member.all
+  member_id = params["id"].to_i
+  @player = Member.find_by(id: member_id)
+end
 
+def destroy
+member = Member.all.find_by(id: params[:id])
+member.destroy
+redirect_to root_url
+end
 
-  def show
+def edit
+  @members = Member.all
+  @member = @members.find_by(id: params[:id])
+end
 
-    @members = Member.all
+def update
+end
 
-    member_id = params["id"].to_i
+def photo
+  @members = Member.all
+  @member = @members.find_by(id: params[:id])
+end
 
-    @player = Member.find_by(id: member_id)
+def update_photo
+end
+
+def upload
+  uploaded_io = params[:id][:photo]
+  File.open(Rails.root.join('assets', 'images', uploaded_io.original_filename), 'wb') do|file|
+    file.write(uploaded_io.read)
   end
+end
+
+
+
 
 
 end

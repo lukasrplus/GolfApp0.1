@@ -6,7 +6,12 @@
       <div class="container">
         <h1>ERIC VOZARI MEMORIAL</h1>
         <p class="lead">Heritage. Honor. Loyalty.</p>
-        <p><a class="btn btn-danger">Learn more</a></p>
+
+              <%= form_tag members_url, method: 'get' do %>
+                   <button type="submit" class="btn btn-danger">See full list of members</button>
+              <% end %>
+
+
       </div>
     </div><!-- end of jumbotron -->
 

@@ -1,0 +1,96 @@
+<div class="profile">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 white" id="member_form">
+
+        <h1>Edit member details</h1>
+
+        <%= form_tag member_url(@member.id), method: 'patch', role: 'form' do %>
+
+              <div class="row">
+
+                <div class="col-lg-6">
+                    <div class="form-group">
+                    <%= label_tag 'firstname', 'First Name:' %>
+                    <%= text_field_tag 'firstname', @member.firstname, class: 'form-control' %>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                  <div class="form_group">
+                  <%= label_tag 'secondname', 'Last Name:' %>
+                  <%= text_field_tag 'secondname', @member.secondname, class: 'form-control' %>
+                  </div>
+                </div>
+
+             </div>
+
+             <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="form-group">
+                    <%= label_tag 'HCP', 'Handicap:' %>
+                    <%= text_field_tag 'HCP', @member.HCP, class: 'form-control' %>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="form_group">
+                  <%= label_tag 'club', 'Golf Club:' %>
+                  <%= text_field_tag 'club', @member.club, class: 'form-control' %>
+                  </div>
+                </div>
+
+                <div class="col-lg-4">
+                  <div class="form_group">
+                  <%= label_tag 'brand', 'Brand:' %>
+                  <%= text_field_tag 'brand', @member.brand, class: 'form-control' %>
+                  </div>
+                </div>
+
+             </div>
+
+          <div class="row">
+            <div class="col-lg-6 edit_buttons">
+              <button type="submit" class="btn btn-success" id = "newtask">Update member details</button>
+            </div>
+
+            <div class="col-lg-6 edit_buttons">
+              <%= form_tag member_url(@member.id), method: 'delete' do %>
+                   <button type="submit" class="btn btn-danger">Delete Member</button>
+              <% end %>
+          </div>
+
+
+          </div>
+
+        <% end %>
+
+<!-- PHOTO BUTTON -->
+
+          <!--    <div class="row">
+
+                <div class="col-lg-12">
+
+
+
+
+                                   <%= form_tag add_photo_url(@member.id), method: 'get' do %>
+                                       <button type="submit" class="btn btn-info">Upload Picture</button>
+                                   <% end %>
+
+
+
+
+                </div>
+
+            </div> -->
+
+
+
+      </div>
+    </div>
+  </div>
+
+</div>

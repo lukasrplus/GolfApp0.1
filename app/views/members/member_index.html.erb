@@ -1,0 +1,23 @@
+<div class="memberlist">
+
+
+<div class="container white">
+
+      <h1>Members</h1>
+
+      <ul class="list-group">
+
+      <% @members.each do |member| %>
+        <% fullname = member.firstname + " " + member.secondname %>
+        <li class="list-group-item" id = "memberlist"><%= link_to fullname, member_url(member.id)%></li>
+
+      <% end %>
+
+
+      </ul>
+
+
+</div>
+
+
+</div>
